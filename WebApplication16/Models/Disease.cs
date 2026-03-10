@@ -2,5 +2,6 @@
 {
     public class Disease
     {
+        public int Id { get; set; }
     }
 }
