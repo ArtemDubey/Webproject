@@ -24,3 +24,4 @@ app.MapRazorPages()
    .WithStaticAssets();
 
 app.Run();
+
