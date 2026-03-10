@@ -1,15 +1,15 @@
-п»їusing Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity;
 
 namespace WebApplication16.Models
 {
-    public class Patient: IdentityUser
+    public class Patient : IdentityUser
     {
         public string FirstName { get; set; } = string.Empty;
         public string LastName { get; set; } = string.Empty;
         public DateTime? BirthDate { get; set; }
         public string Gender { get; set; } = string.Empty;
 
-        public string? PetId { get; set; } // Р’Р»Р°СЃРЅС–СЃС‚СЊ РґР»СЏ Р·Р±РµСЂС–РіР°РЅРЅСЏ С–РґРµРЅС‚РёС„С–РєР°С‚РѕСЂР° Р·РІ'СЏР·Р°РЅРѕРіРѕ Pet
-        public Pet Pet { get; set; } // Р’Р»Р°СЃРЅС–СЃС‚СЊ РґР»СЏ Р·РІ'СЏР·РєСѓ Р· РјРѕРґРµР»Р»СЋ Pet
+        public string? PetId { get; set; } // Власність для зберігання ідентифікатора зв'язаного Pet
+        public Pet Pet { get; set; } // Власність для зв'язку з моделлю Pet
     }
 }

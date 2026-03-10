@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity;
 
 namespace WebApplication16.Models
 {
-    public class Admin: IdentityUser
+    public class Admin : IdentityUser
     {
         public string? DoctorId { get; set; } = string.Empty;
         public Doctor? Doctor { get; set; }
@@ -11,6 +11,5 @@ namespace WebApplication16.Models
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime? UpdatedAt { get; set; }
         public bool IsActive { get; set; } = true;
-
     }
 }

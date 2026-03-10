@@ -1,25 +1,18 @@
-п»їnamespace WebApplication16.Models
+namespace WebApplication16.Models;
+
+public class Disease
 {
-    public class Disease
-    {
-        namespace WebApplication16.Models
-    {
-        public class Disease
-        {
-            public int Id { get; set; }
-            public string Name { get; set; } = string.Empty; // РќР°Р·РІР° С…РІРѕСЂРѕР±Рё
-            public string? Description { get; set; }        // РћРїРёСЃ Р°Р±Рѕ СЃРёРјРїС‚РѕРјРё
-            public string? Category { get; set; }       // РљР°С‚РµРіРѕСЂС–СЏ (С–РЅС„РµРєС†С–Р№РЅР°, С…СЂРѕРЅС–С‡РЅР° С‚РѕС‰Рѕ)
-            public bool IsInfectious { get; set; } = false; // Р§Рё С” С…РІРѕСЂРѕР±Р° С–РЅС„РµРєС†С–Р№РЅРѕСЋ
+    public int Id { get; set; }
+    public string Name { get; set; } = string.Empty; // Назва хвороби
+    public string? Description { get; set; }        // Опис або симптоми
+    public string? Category { get; set; }       // Категорія (інфекційна, хронічна тощо)
+    public bool IsInfectious { get; set; } = false; // Чи є хвороба інфекційною
 
-            // РњРµС‚Р°РґР°РЅС–
-            public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-            public DateTime? UpdatedAt { get; set; }
+    // Метадані
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+    public DateTime? UpdatedAt { get; set; }
 
-            // Р—РІвЂ™СЏР·РєРё Р· С–РЅС€РёРјРё СЃСѓС‚РЅРѕСЃС‚СЏРјРё
-            public ICollection<Pet> Pets { get; set; }
-            public ICollection<Therapy> Therapies { get; set; }
-        }
-    }
-}
+    // Зв’язки з іншими сутностями
+    public ICollection<Pet> Pets { get; set; }
+    public ICollection<Therapy> Therapies { get; set; }
 }

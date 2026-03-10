@@ -1,30 +1,29 @@
-п»їnamespace WebApplication16.Models
+namespace WebApplication16.Models;
+
+public class Appointment
 {
-    public class Appointment
-    {
-        public int Id { get; set; }
+    public int Id { get; set; }
 
-        // РћСЃРЅРѕРІРЅС– РґР°РЅС–
-        public DateTime Date { get; set; } // РґР°С‚Р° С‚Р° С‡Р°СЃ РїСЂРёР№РѕРјСѓ
-        public string? Reason { get; set; } // РїСЂРёС‡РёРЅР° РІС–Р·РёС‚Сѓ (СЃРёРјРїС‚РѕРјРё, РєРѕРЅСЃСѓР»СЊС‚Р°С†С–СЏ)
+    // Основні дані
+    public DateTime Date { get; set; } // дата та час прийому
+    public string? Reason { get; set; } // причина візиту (симптоми, консультація)
 
-        // Р—РІвЂ™СЏР·РєРё Р· С–РЅС€РёРјРё СЃСѓС‚РЅРѕСЃС‚СЏРјРё
-        public string? DoctorId { get; set; }
-        public Doctor? Doctor { get; set; }
+    // Зв’язки з іншими сутностями
+    public string? DoctorId { get; set; }
+    public Doctor? Doctor { get; set; }
 
-        public string? PatientId { get; set; }
-        public Patient? Patient { get; set; }
+    public string? PatientId { get; set; }
+    public Patient? Patient { get; set; }
 
-        public int? PetId { get; set; }
-        public Pet? Pet { get; set; }
+    public int? PetId { get; set; }
+    public Pet? Pet { get; set; }
 
-        // РЎС‚Р°С‚СѓСЃ РїСЂРёР№РѕРјСѓ
-        public string Status { get; set; } = "Scheduled";
-        // РќР°РїСЂРёРєР»Р°Рґ: Scheduled, Completed, Cancelled
+    // Статус прийому
+    public string Status { get; set; } = "Scheduled";
+    // Наприклад: Scheduled, Completed, Cancelled
 
-        // РњРµС‚Р°РґР°РЅС–
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-        public DateTime? UpdatedAt { get; set; }
+    // Метадані
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+    public DateTime? UpdatedAt { get; set; }
 
-    }
 }

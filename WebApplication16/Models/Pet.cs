@@ -1,28 +1,28 @@
-п»їnamespace WebApplication16.Models
+namespace WebApplication16.Models
 {
     public class Pet
     {
         public int Id { get; set; }
 
-        // РћСЃРЅРѕРІРЅС– РґР°РЅС–
+        // Основні дані
         public string Name { get; set; } = string.Empty;
-        public string Species { get; set; } = string.Empty; // РќР°РїСЂРёРєР»Р°Рґ: Dog, Cat
-        public string Breed { get; set; } = string.Empty; // РџРѕСЂРѕРґР°
+        public string Species { get; set; } = string.Empty; // Наприклад: Dog, Cat
+        public string Breed { get; set; } = string.Empty; // Порода
         public DateTime? BirthDate { get; set; }
         public string Gender { get; set; } = string.Empty;
 
-        // РњРµРґРёС‡РЅР° С–РЅС„РѕСЂРјР°С†С–СЏ
+        // Медична інформація
         public string? Vaccinations { get; set; }
         public string? Allergies { get; set; }
         public string? ChronicDiseases { get; set; }
 
-        // Р—РІвЂ™СЏР·РєРё Р· С–РЅС€РёРјРё СЃСѓС‚РЅРѕСЃС‚СЏРјРё
+        // Зв’язки з іншими сутностями
         public string? PatientId { get; set; }
-        public Patient? Patients { get; set; } // Р’Р»Р°СЃРЅРёРє С‚РІР°СЂРёРЅРё
+        public Patient? Patients { get; set; } // Власник тварини
         public ICollection<Disease> Diseases { get; set; }
         public ICollection<Therapy> Therapies { get; set; }
 
-        // РњРµС‚Р°РґР°РЅС–
+        // Метадані
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime? UpdatedAt { get; set; }
         public bool IsActive { get; set; } = true;

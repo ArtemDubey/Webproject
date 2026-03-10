@@ -1,13 +1,13 @@
-п»їnamespace WebApplication16.Models
+namespace WebApplication16.Models
 {
     public class Therapy
     {
         public int Id { get; set; }
-        public string Name { get; set; } = string.Empty; // РќР°Р·РІР° С‚РµСЂР°РїС–С—
-        public string? Description { get; set; }        // РћРїРёСЃ С‚РµСЂР°РїС–С—
-        public int DiseaseId { get; set; }             // Р—РѕРІРЅС–С€РЅС–Р№ РєР»СЋС‡ РґРѕ С…РІРѕСЂРѕР±Рё
-        public Disease Disease { get; set; }           // РќР°РІС–РіР°С†С–Р№РЅР° РІР»Р°СЃС‚РёРІС–СЃС‚СЊ РґРѕ С…РІРѕСЂРѕР±Рё
-        // РњРµС‚Р°РґР°РЅС–
+        public string Name { get; set; } = string.Empty; // Назва терапії
+        public string? Description { get; set; }        // Опис терапії
+        public int DiseaseId { get; set; }             // Зовнішній ключ до хвороби
+        public Disease Disease { get; set; }           // Навігаційна властивість до хвороби
+        // Метадані
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime? UpdatedAt { get; set; }
     }
