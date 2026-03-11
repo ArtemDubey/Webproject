@@ -1,9 +1,206 @@
+<<<<<<< HEAD
+=======
+/*html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}*/
+
+/* Основні кольори */
+/*:root {
+    --primary: #4CAF50;*/ /* зелений */
+    /*--secondary: #FFC107;*/ /* теплий жовтий */
+    /*--background: #f9f9f9;*/ /* світлий фон */
+    /*--text: #333333;*/ /* базовий текст */
+    /*--accent: #009688;*/ /* бірюзовий акцент */
+/*}*/
+
+/* Базові стилі */
+/*body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}*/
+
+/* Шапка */
+/*header {
+    background: var(--primary);
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+    header h1 {
+        margin: 0;
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }*/
+
+/* Навігація */
+/*nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+    nav a:hover {
+        color: var(--secondary);
+    }*/
+
+/* Картки послуг */
+/*.service-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+    .service-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .service-card h3 {
+        color: var(--primary);
+        margin-top: 0;
+    }*/
+
+/* Кнопки */
+/*button, .btn {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+    button:hover, .btn:hover {
+        background: var(--primary);
+    }*/
+
+/* Контейнер */
+/*.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}*/
+
+/* Секції */
+/*section {
+    margin-bottom: 3rem;
+}
+
+    section h2 {
+        text-align: center;
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+        font-size: 2rem;
+    }*/
+
+/* Сітка для карток */
+/*.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}*/
+
+/* Hero-блок */
+/*.hero {
+    background: linear-gradient(rgba(76,175,80,0.8), rgba(0,150,136,0.8)), url('clinic-hero.jpg') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+    border-radius: 10px;
+}
+
+    .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: 0 auto;
+    }*/
+
+/* Футер */
+/*footer {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}*/
+
+
+
+/* Адаптивність */
+/*@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+}*/
+
+/* Основні кольори */
+>>>>>>> 09cf15ecf6d3331922a50ca5e9757b125f6af65a
 :root {
     --primary: #4CAF50;
     --secondary: #FFC107;
     --background: #f9f9f9;
     --text: #333333;
     --accent: #009688;
+<<<<<<< HEAD
     --muted: #6c757d;
     --surface: #ffffff;
     --shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
@@ -16,6 +213,9 @@
 
 html, body {
     height: 100%;
+=======
+    --blue-section: #2196F3; /* для синього блоку */
+>>>>>>> 09cf15ecf6d3331922a50ca5e9757b125f6af65a
 }
 
 body {
@@ -28,6 +228,7 @@ body {
     line-height: 1.5;
 }
 
+<<<<<<< HEAD
 .container {
     max-width: 1100px;
     margin: 2rem auto;
@@ -38,6 +239,81 @@ body {
     background: linear-gradient(90deg, rgba(76,175,80,0.95), rgba(0,150,136,0.95));
     color: #fff;
     box-shadow: var(--shadow);
+=======
+/* Шапка */
+header {
+    background: var(--primary);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    header h1 {
+        margin: 0;
+        font-size: 1.8rem;
+    }
+
+/* Навігація */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+    nav a:hover {
+        color: var(--secondary);
+    }
+
+/* Hero-секція */
+.hero {
+    background: var(--blue-section);
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+    .hero h2 {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto 2rem;
+    }
+
+/* Кнопки */
+button, .btn {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+    button:hover, .btn:hover {
+        background: var(--primary);
+    }
+
+/* Секції */
+section {
+    padding: 2rem;
+>>>>>>> 09cf15ecf6d3331922a50ca5e9757b125f6af65a
 }
 
     .navbar .navbar-brand {
@@ -71,6 +347,7 @@ body {
     .dropdown-item:hover {
         background: linear-gradient(90deg, rgba(76,175,80,0.06), rgba(0,150,136,0.06));
         color: var(--primary);
+<<<<<<< HEAD
     }
 
 .jumbotron {
@@ -126,6 +403,33 @@ body {
         outline: none;
         border-color: rgba(76,175,80,0.8);
         box-shadow: 0 0 0 0.15rem rgba(76,175,80,0.12);
+=======
+        margin-bottom: 1.5rem;
+    }
+
+/* Сітка послуг */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.service-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+    .service-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .service-card h3 {
+        color: var(--primary);
+        margin-top: 0;
+>>>>>>> 09cf15ecf6d3331922a50ca5e9757b125f6af65a
     }
 
 label {
@@ -162,6 +466,7 @@ input[type="hidden"] {
 }
 
 footer {
+<<<<<<< HEAD
     background: linear-gradient(90deg, rgba(76,175,80,0.95), rgba(0,150,136,0.95)) !important;
     color: #fff !important;
     padding: 0.35rem 0 !important;
@@ -232,4 +537,27 @@ a.btn-link {
     a.btn-link:hover {
         color: var(--primary);
         text-decoration: underline;
+=======
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+>>>>>>> 09cf15ecf6d3331922a50ca5e9757b125f6af65a
     }
