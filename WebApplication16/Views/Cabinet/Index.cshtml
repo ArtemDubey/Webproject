@@ -1,0 +1,172 @@
+@{
+    ViewData["Title"] = "Особистий кабінет";
+}
+
+<div class="cabinet-header mb-4">
+    <div class="d-flex align-items-center gap-3">
+        <div class="cabinet-avatar">
+            <span>@(ViewBag.FirstName?[0])@(ViewBag.LastName?[0])</span>
+        </div>
+        <div>
+            <h4 class="mb-0 fw-bold">@ViewBag.FirstName @ViewBag.LastName</h4>
+            <span class="text-muted small">Особистий кабінет власника тварини</span>
+        </div>
+    </div>
+</div>
+
+<div class="row g-3 mb-4">
+    <div class="col-sm-6 col-lg-3">
+        <div class="stat-card">
+            <div class="stat-icon" style="background:rgba(76,175,80,0.12);color:var(--primary)">🐾</div>
+            <div class="stat-value">@(ViewBag.PetsCount ?? 0)</div>
+            <div class="stat-label">Тварин</div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3">
+        <div class="stat-card">
+            <div class="stat-icon" style="background:rgba(0,150,136,0.12);color:var(--accent)">📅</div>
+            <div class="stat-value">@(ViewBag.UpcomingCount ?? 0)</div>
+            <div class="stat-label">Майбутніх записів</div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3">
+        <div class="stat-card">
+            <div class="stat-icon" style="background:rgba(255,193,7,0.12);color:#e6ac00">💉</div>
+            <div class="stat-value">@(ViewBag.VaccinationsDue ?? 0)</div>
+            <div class="stat-label">Щеплень на черзі</div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3">
+        <div class="stat-card">
+            <div class="stat-icon" style="background:rgba(233,30,99,0.10);color:#e91e63">🏥</div>
+            <div class="stat-value">@(ViewBag.TotalVisits ?? 0)</div>
+            <div class="stat-label">Всього візитів</div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4">
+    <div class="col-lg-7">
+        <div class="card p-4 h-100">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="fw-bold mb-0">📅 Найближчі записи</h5>
+                <a asp-controller="Cabinet" asp-action="Appointments" class="btn btn-sm btn-outline-secondary">Всі записи</a>
+            </div>
+            @if (ViewBag.UpcomingAppointments != null && ((IEnumerable<dynamic>)ViewBag.UpcomingAppointments).Any())
+            {
+                foreach (var a in ViewBag.UpcomingAppointments)
+                {
+                    <div class="appointment-item">
+                        <div class="appt-date">
+                            <span class="appt-day">@a.Date.ToString("dd")</span>
+                            <span class="appt-month">@a.Date.ToString("MMM")</span>
+                        </div>
+                        <div class="appt-info">
+                            <div class="fw-semibold">@a.DoctorName</div>
+                            <div class="text-muted small">@a.Reason · @a.PetName</div>
+                        </div>
+                        <span class="badge-status @(a.Status == "Scheduled" ? "badge-scheduled" : "badge-completed")">
+                            @(a.Status == "Scheduled" ? "Заплановано" : a.Status)
+                        </span>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="empty-state">
+                    <span>📭</span>
+                    <p>Немає майбутніх записів</p>
+                    <a asp-controller="Appointment" asp-action="Book" class="btn btn-primary btn-sm">Записатись</a>
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="col-lg-5">
+        <div class="card p-4 h-100">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="fw-bold mb-0">🐾 Мої тварини</h5>
+                <a asp-controller="Cabinet" asp-action="Pets" class="btn btn-sm btn-outline-secondary">Всі</a>
+            </div>
+            @if (ViewBag.Pets != null && ((IEnumerable<dynamic>)ViewBag.Pets).Any())
+            {
+                foreach (var pet in ViewBag.Pets)
+                {
+                    <a asp-controller="Cabinet" asp-action="PetDetails" asp-route-id="@pet.Id" class="pet-card-link">
+                        <div class="pet-item">
+                            <div class="pet-emoji">@(pet.Species == "Dog" ? "🐶" : pet.Species == "Cat" ? "🐱" : pet.Species == "Bird" ? "🐦" : "🐾")</div>
+                            <div>
+                                <div class="fw-semibold">@pet.Name</div>
+                                <div class="text-muted small">@pet.Breed · @pet.Species</div>
+                            </div>
+                            <span class="ms-auto text-muted">›</span>
+                        </div>
+                    </a>
+                }
+            }
+            else
+            {
+                <div class="empty-state">
+                    <span>🐾</span>
+                    <p>Тварин ще немає</p>
+                    <a asp-controller="Cabinet" asp-action="AddPet" class="btn btn-primary btn-sm">Додати тварину</a>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<style>
+    .cabinet-header {
+        background: linear-gradient(135deg, rgba(76,175,80,0.08), rgba(0,150,136,0.06));
+        border-radius: 14px;
+        padding: 1.4rem 1.6rem;
+        border: 1px solid rgba(76,175,80,0.12);
+    }
+    .cabinet-avatar {
+        width: 56px; height: 56px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        color: #fff;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 1.3rem; font-weight: 700;
+        flex-shrink: 0;
+    }
+    .stat-card {
+        background: var(--surface);
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+        padding: 1.2rem;
+        text-align: center;
+    }
+    .stat-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin: 0 auto .6rem; }
+    .stat-value { font-size: 1.7rem; font-weight: 700; line-height: 1; }
+    .stat-label { font-size: .78rem; color: var(--muted); margin-top: .2rem; }
+    .appointment-item {
+        display: flex; align-items: center; gap: 1rem;
+        padding: .75rem 0;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    .appointment-item:last-child { border-bottom: none; }
+    .appt-date { text-align: center; min-width: 38px; }
+    .appt-day { display: block; font-size: 1.3rem; font-weight: 700; line-height: 1; color: var(--primary); }
+    .appt-month { display: block; font-size: .7rem; text-transform: uppercase; color: var(--muted); }
+    .appt-info { flex: 1; }
+    .badge-status { font-size: .72rem; padding: .3rem .7rem; border-radius: 20px; font-weight: 600; white-space: nowrap; }
+    .badge-scheduled { background: rgba(76,175,80,0.12); color: var(--primary); }
+    .badge-completed { background: rgba(0,150,136,0.12); color: var(--accent); }
+    .pet-card-link { text-decoration: none; color: inherit; }
+    .pet-item {
+        display: flex; align-items: center; gap: .9rem;
+        padding: .7rem .8rem;
+        border-radius: 10px;
+        transition: background .15s;
+        cursor: pointer;
+        margin-bottom: .3rem;
+    }
+    .pet-item:hover { background: rgba(76,175,80,0.06); }
+    .pet-emoji { font-size: 1.6rem; width: 40px; text-align: center; }
+    .empty-state { text-align: center; padding: 2rem 1rem; color: var(--muted); }
+    .empty-state span { font-size: 2.5rem; display: block; margin-bottom: .5rem; }
+    .empty-state p { margin-bottom: 1rem; font-size: .9rem; }
+</style>

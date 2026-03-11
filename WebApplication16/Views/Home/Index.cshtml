@@ -2,24 +2,25 @@
     ViewData["Title"] = "Головна";
 }
 
-<section class="jumbotron text-white bg-primary py-5 mb-4">
+<section class="jumbotron text-white py-5 mb-4" style="background: linear-gradient(135deg, #4A90E2, #357ABD, #2C5E9E); border-radius: 25px; box-shadow: 0 20px 40px rgba(53, 122, 189, 0.3);">
     <div class="container">
         <h1 class="display-5">Ветеринарна клініка «Здорові Пухнастики»</h1>
         <p class="lead">Професійна допомога для вашого улюбленця: вакцинація, хірургія, безпека та догляд.</p>
 
         <div class="row mt-4">
             <div class="col-md-8">
-                <ul class="list-group list-group-flush text-dark">
-                    <li class="list-group-item">Вакцинації та профілактика</li>
-                    <li class="list-group-item">Термінова допомога та хірургія</li>
-                    <li class="list-group-item">Діагностика та лабораторні дослідження</li>
-                    <li class="list-group-item">Стоматологія та чищення</li>
+                <ul class="list-group list-group-flush bg-transparent">
+                    <li class="list-group-item bg-transparent text-white border-white">💉 Вакцинації та профілактика</li>
+                    <li class="list-group-item bg-transparent text-white border-white">🚑 Термінова допомога та хірургія</li>
+                    <li class="list-group-item bg-transparent text-white border-white">🔬 Діагностика та лабораторні дослідження</li>
+                    <li class="list-group-item bg-transparent text-white border-white">🦷 Стоматологія та чищення</li>
                 </ul>
             </div>
+
             <div class="col-md-4 d-flex align-items-center">
                 <div class="w-100">
-                    <a class="btn btn-lg btn-success w-100 mb-2" asp-controller="Appointment" asp-action="Create">Записатись на прийом</a>
-                    <a class="btn btn-lg btn-outline-light w-100" asp-controller="Doctor" asp-action="Index">Наші лікарі</a>
+                    <a class="btn btn-lg w-100 mb-2 appointment-btn" asp-controller="Appointment" asp-action="Create">Записатись на прийом</a>
+                    <a class="btn btn-lg w-100 doctors-btn" asp-controller="Doctor" asp-action="Index">Наші лікарі</a>
                 </div>
             </div>
         </div>
