@@ -17,13 +17,6 @@
     box-sizing: border-box;
 }
 
-
-main {
-    flex: 1;*/ /* займає простір між хедером і футером */
-    /*padding: 2rem 1rem;
-}*/
-
-
 html, body {
     height: 100%;
 }
