@@ -1,191 +1,235 @@
-/*html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  margin-bottom: 60px;
-}
-
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
-}
-
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
-}*/
-
-/* Основні кольори */
 :root {
-    --primary: #4CAF50; /* зелений */
-    --secondary: #FFC107; /* теплий жовтий */
-    --background: #f9f9f9; /* світлий фон */
-    --text: #333333; /* базовий текст */
-    --accent: #009688; /* бірюзовий акцент */
+    --primary: #4CAF50;
+    --secondary: #FFC107;
+    --background: #f9f9f9;
+    --text: #333333;
+    --accent: #009688;
+    --muted: #6c757d;
+    --surface: #ffffff;
+    --shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+    --radius: 10px;
 }
 
-/* Базові стилі */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: var(--background);
+    margin: 0;
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--background);
     color: var(--text);
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.5;
 }
 
-/* Шапка */
-header {
-    background: var(--primary);
-    color: white;
-    padding: 1rem 2rem;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-}
-
-    header h1 {
-        margin: 0;
-        font-size: 1.8rem;
-        letter-spacing: 1px;
-    }
-
-/* Навігація */
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-    margin: 0;
-    padding: 0;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-    nav a:hover {
-        color: var(--secondary);
-    }
-
-/* Картки послуг */
-.service-card {
-    background: white;
-    border-radius: 10px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-}
-
-    .service-card:hover {
-        transform: translateY(-5px);
-    }
-
-    .service-card h3 {
-        color: var(--primary);
-        margin-top: 0;
-    }
-
-/* Кнопки */
-button, .btn {
-    background: var(--accent);
-    color: white;
-    border: none;
-    padding: 0.8rem 1.2rem;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background 0.3s ease;
-}
-
-    button:hover, .btn:hover {
-        background: var(--primary);
-    }
-
-/* Контейнер */
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1rem;
 }
 
-/* Секції */
-section {
-    margin-bottom: 3rem;
+.navbar {
+    background: linear-gradient(90deg, rgba(76,175,80,0.95), rgba(0,150,136,0.95));
+    color: #fff;
+    box-shadow: var(--shadow);
 }
 
-    section h2 {
-        text-align: center;
+    .navbar .navbar-brand {
+        color: white !important;
+        font-weight: 600;
+        letter-spacing: .2px;
+    }
+
+    .navbar .nav-link {
+        color: rgba(255,255,255,0.95) !important;
+    }
+
+        .navbar .nav-link.text-dark {
+            color: rgba(255,255,255,0.95) !important;
+        }
+
+        .navbar .nav-link:hover {
+            color: var(--secondary) !important;
+        }
+
+.dropdown-menu {
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(15,23,42,0.12);
+    min-width: 220px;
+}
+
+.dropdown-item {
+    color: #222;
+}
+
+    .dropdown-item:hover {
+        background: linear-gradient(90deg, rgba(76,175,80,0.06), rgba(0,150,136,0.06));
         color: var(--primary);
-        margin-bottom: 1.5rem;
-        font-size: 2rem;
     }
 
-/* Сітка для карток */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+.jumbotron {
+    background: linear-gradient(135deg, rgba(76,175,80,0.92), rgba(0,150,136,0.85));
+    color: #fff;
+    padding: 3.2rem 1.2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
 }
 
-/* Hero-блок */
-.hero {
-    background: linear-gradient(rgba(76,175,80,0.8), rgba(0,150,136,0.8)), url('clinic-hero.jpg') center/cover no-repeat;
-    color: white;
-    text-align: center;
-    padding: 4rem 2rem;
-    border-radius: 10px;
+    .jumbotron .lead {
+        opacity: 0.95;
+    }
+
+.card {
+    border: none;
+    border-radius: 12px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
 }
 
-    .hero h1 {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
+.btn {
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, var(--accent), var(--primary));
+    border: none;
+    color: #fff;
+    transition: transform .08s ease, box-shadow .12s ease;
+}
+
+    .btn-primary:hover, .btn-primary:focus {
+        transform: translateY(-1px);
+        box-shadow: 0 8px 22px rgba(76,175,80,0.14);
     }
 
-    .hero p {
-        font-size: 1.2rem;
-        max-width: 600px;
-        margin: 0 auto;
+.btn-outline-light {
+    color: #fff;
+    border-color: rgba(255,255,255,0.2);
+}
+
+.form-control {
+    border-radius: 8px;
+    border: 1px solid #e3e6ea;
+    padding: .6rem .75rem;
+    background: #fff;
+    transition: border-color .15s ease, box-shadow .12s ease;
+}
+
+    .form-control:focus {
+        outline: none;
+        border-color: rgba(76,175,80,0.8);
+        box-shadow: 0 0 0 0.15rem rgba(76,175,80,0.12);
     }
 
-/* Футер */
+label {
+    font-weight: 600;
+    color: var(--muted);
+    display: block;
+    margin-bottom: .35rem;
+}
+
+.form-row {
+    margin-bottom: 1rem;
+}
+
+.form-check-input {
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.form-check-label {
+    margin-left: .35rem;
+}
+
+.text-danger, .validation-summary-errors {
+    color: #c32e2e;
+}
+
+.input-validation-error {
+    border-color: #c32e2e !important;
+    box-shadow: 0 0 0 0.12rem rgba(195,46,46,0.08);
+}
+
+input[type="hidden"] {
+    display: none;
+}
+
 footer {
-    background: var(--primary);
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
+    background: linear-gradient(90deg, rgba(76,175,80,0.95), rgba(0,150,136,0.95)) !important;
+    color: #fff !important;
+    padding: 0.35rem 0 !important;
+    margin-top: 0.8rem !important;
+    text-align: center !important;
+    font-size: 0.82rem !important;
+    line-height: 1.1 !important;
+    box-shadow: 0 -2px 8px rgba(15,23,42,0.04) !important;
+    min-height: 0 !important;
+    height: auto !important;
 }
 
+    footer .container {
+        padding: 0 !important;
+    }
 
+.text-muted {
+    color: var(--muted) !important;
+}
 
-/* Адаптивність */
+.mb-3 {
+    margin-bottom: 1rem !important;
+}
+
 @media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        gap: 0.8rem;
+    .container {
+        padding: 0 1rem;
+        margin: 1rem auto;
     }
 
-    header h1 {
-        font-size: 1.5rem;
+    .jumbotron {
+        padding: 2rem 1rem;
     }
 
-    .hero h1 {
-        font-size: 2rem;
+    .navbar .nav-link {
+        font-size: 0.95rem;
     }
 }
+
+a:focus, button:focus, input:focus {
+    outline: 3px solid rgba(76,175,80,0.12);
+    outline-offset: 2px;
+}
+
+.account-form {
+    max-width: 520px;
+    margin: 1.2rem auto;
+    padding: 1.4rem;
+    background: linear-gradient(180deg, #fff, #fcfcfc);
+    border-radius: 12px;
+    box-shadow: 0 12px 28px rgba(15,23,42,0.06);
+}
+
+    .account-form .btn {
+        width: 100%;
+        padding: .8rem 1rem;
+    }
+
+        .account-form .btn + .btn-link {
+            display: inline-block;
+            margin-top: .6rem;
+        }
+
+a.btn-link {
+    color: var(--muted);
+}
+
+    a.btn-link:hover {
+        color: var(--primary);
+        text-decoration: underline;
+    }
