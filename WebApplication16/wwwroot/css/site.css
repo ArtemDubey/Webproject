@@ -14,6 +14,19 @@
     box-sizing: border-box;
 }
 
+/*html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;*/ /* займає простір між хедером і футером */
+    /*padding: 2rem 1rem;
+}*/
+
+
 html, body {
     height: 100%;
 }
