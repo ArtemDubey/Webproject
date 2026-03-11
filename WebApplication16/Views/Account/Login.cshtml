@@ -2,29 +2,34 @@
     ViewData["Title"] = "Вхід пацієнта";
 }
 
-<h2>@ViewData["Title"]</h2>
+<div class="auth-card">
+    <h2>@ViewData["Title"]</h2>
 
-<form asp-controller="Account" asp-action="Login" method="post" class="row g-3">
-    @Html.AntiForgeryToken()
-    <input type="hidden" name="ReturnUrl" value="@(ViewData["ReturnUrl"] ?? "")" />
+    <form asp-controller="Account" asp-action="Login" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="ReturnUrl" value="@(ViewData["ReturnUrl"] ?? "")" />
 
-    <div class="col-12">
-        <label for="Email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="Email" name="Email" required />
-    </div>
+        <div class="form-group">
+            <label for="Email">Email</label>
+            <input type="email" class="form-control" id="Email" name="Email" placeholder="example@email.com" required />
+        </div>
 
-    <div class="col-12">
-        <label for="Password" class="form-label">Пароль</label>
-        <input type="password" class="form-control" id="Password" name="Password" required />
-    </div>
+        <div class="form-group">
+            <label for="Password">Пароль</label>
+            <input type="password" class="form-control" id="Password" name="Password" placeholder="********" required />
+        </div>
 
-    <div class="col-12 form-check">
-        <input class="form-check-input" type="checkbox" id="RememberMe" name="RememberMe" />
-        <label class="form-check-label" for="RememberMe">Запам'ятати мене</label>
-    </div>
+        <div class="form-group" style="display: flex; align-items: center;">
+            <input type="checkbox" id="RememberMe" name="RememberMe" style="width: auto; margin-right: 10px;" />
+            <label for="RememberMe" style="display: inline; margin-bottom: 0; text-transform: none;">Запам'ятати мене</label>
+        </div>
 
-    <div class="col-12">
         <button type="submit" class="btn btn-primary">Увійти</button>
-        <a asp-controller="Account" asp-action="Register" class="btn btn-link">Реєстрація</a>
-    </div>
-</form>
+
+        <div class="auth-links">
+            <a asp-controller="Account" asp-action="Register">Немає акаунта? Зареєструватися</a>
+            <span style="color: white; margin: 0 10px;">|</span>
+            <a asp-controller="Home" asp-action="Index">Назад</a>
+        </div>
+    </form>
+</div>

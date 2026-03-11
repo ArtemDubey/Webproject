@@ -2,29 +2,32 @@
     ViewData["Title"] = "Вхід персоналу (Доктори)";
 }
 
-<h2>@ViewData["Title"]</h2>
+<div class="auth-card">
+    <h2>@ViewData["Title"]</h2>
 
-<form asp-controller="Account" asp-action="LoginStaff" method="post" class="row g-3">
-    @Html.AntiForgeryToken()
-    <input type="hidden" name="ReturnUrl" value="@(ViewData["ReturnUrl"] ?? "")" />
+    <form asp-controller="Account" asp-action="LoginStaff" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="ReturnUrl" value="@(ViewData["ReturnUrl"] ?? "")" />
 
-    <div class="col-12">
-        <label for="Email" class="form-label">Email або логін</label>
-        <input type="text" class="form-control" id="Email" name="Email" required />
-    </div>
+        <div class="form-group">
+            <label for="Email">Email або логін</label>
+            <input type="text" class="form-control" id="Email" name="Email" placeholder="Введіть email або логін" required />
+        </div>
 
-    <div class="col-12">
-        <label for="Password" class="form-label">Пароль</label>
-        <input type="password" class="form-control" id="Password" name="Password" required />
-    </div>
+        <div class="form-group">
+            <label for="Password">Пароль</label>
+            <input type="password" class="form-control" id="Password" name="Password" placeholder="********" required />
+        </div>
 
-    <div class="col-12 form-check">
-        <input class="form-check-input" type="checkbox" id="RememberMe" name="RememberMe" />
-        <label class="form-check-label" for="RememberMe">Запам'ятати мене</label>
-    </div>
+        <div class="form-group" style="display: flex; align-items: center;">
+            <input type="checkbox" id="RememberMe" name="RememberMe" style="width: auto; margin-right: 10px;" />
+            <label for="RememberMe" style="display: inline; margin-bottom: 0; text-transform: none;">Запам'ятати мене</label>
+        </div>
 
-    <div class="col-12">
         <button type="submit" class="btn btn-primary">Увійти</button>
-        <a asp-controller="Home" asp-action="Index" class="btn btn-link">Назад</a>
-    </div>
-</form>
+
+        <div class="auth-links">
+            <a asp-controller="Home" asp-action="Index">Назад на головну</a>
+        </div>
+    </form>
+</div>
