@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Вхід пацієнта";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-controller="Account" asp-action="Login" method="post" class="row g-3">
+    @Html.AntiForgeryToken()
+    <input type="hidden" name="ReturnUrl" value="@(ViewData["ReturnUrl"] ?? "")" />
+
+    <div class="col-12">
+        <label for="Email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="Email" name="Email" required />
+    </div>
+
+    <div class="col-12">
+        <label for="Password" class="form-label">Пароль</label>
+        <input type="password" class="form-control" id="Password" name="Password" required />
+    </div>
+
+    <div class="col-12 form-check">
+        <input class="form-check-input" type="checkbox" id="RememberMe" name="RememberMe" />
+        <label class="form-check-label" for="RememberMe">Запам'ятати мене</label>
+    </div>
+
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Увійти</button>
+        <a asp-controller="Account" asp-action="Register" class="btn btn-link">Реєстрація</a>
+    </div>
+</form>
