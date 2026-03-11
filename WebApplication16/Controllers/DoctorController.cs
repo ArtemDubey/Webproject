@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebApplication16.Models;
+using WebApplication16.Data;
 
 namespace WebApplication16.Controllers
 {
