@@ -30,6 +30,9 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .navbar {
@@ -185,9 +188,10 @@ footer {
     text-align: center !important;
     font-size: 0.82rem !important;
     line-height: 1.1 !important;
-    box-shadow: 0 -2px 8px rgba(15,23,42,0.04) !important;
-    min-height: 0 !important;
-    height: auto !important;
+    box-shadow: 0 -2px 8px rgba(15,23,42,0.04);
+    position: relative !important;
+    margin-top: auto !important;
+    z-index: 0 !important;
 }
 
 @media (max-width: 768px) {
@@ -243,3 +247,8 @@ footer {
         color: #357ABD;
         text-decoration: none;
     }
+
+main[role="main"], .container {
+    flex: 1 0 auto;
+    z-index: 1;
+}
