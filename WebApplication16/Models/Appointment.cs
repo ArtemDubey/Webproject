@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-﻿namespace WebApplication16.Models
-{
-    public class Appointment
-    {
-    }
-}
-=======
 namespace WebApplication16.Models;
 
 public class Appointment
@@ -35,4 +27,4 @@ public class Appointment
     public DateTime? UpdatedAt { get; set; }
 
 }
->>>>>>> f04bd7ee7d405866f2bcf1ccca7083b29349d490
+

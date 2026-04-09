@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-ï»¿namespace WebApplication16.Models
-{
-    public class Disease
-    {
-        public int Id { get; set; }
-    }
-=======
+
 namespace WebApplication16.Models;
 
 public class Disease
@@ -23,5 +16,5 @@ public class Disease
     // Çâ’ÿçêè ç ³íøèìè ñóòíîñòÿìè
     public ICollection<Pet> Pets { get; set; }
     public ICollection<Therapy> Therapies { get; set; }
->>>>>>> f04bd7ee7d405866f2bcf1ccca7083b29349d490
+
 }

@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-﻿namespace WebApplication16.Models
-{
-    public class Pet
-    {
-    }
-}
-=======
 namespace WebApplication16.Models
 {
     public class Pet
@@ -37,4 +29,4 @@ namespace WebApplication16.Models
 
     }
 }
->>>>>>> f04bd7ee7d405866f2bcf1ccca7083b29349d490
+
