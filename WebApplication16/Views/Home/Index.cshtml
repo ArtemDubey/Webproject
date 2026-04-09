@@ -1,0 +1,58 @@
+﻿@{
+    ViewData["Title"] = "Головна";
+}
+
+<section class="jumbotron text-white py-5 mb-4" style="background: linear-gradient(135deg, #4A90E2, #357ABD, #2C5E9E); border-radius: 25px; box-shadow: 0 20px 40px rgba(53, 122, 189, 0.3);">
+    <div class="container">
+        <h1 class="display-5">Ветеринарна клініка «Здорові Пухнастики»</h1>
+        <p class="lead">Професійна допомога для вашого улюбленця: вакцинація, хірургія, безпека та догляд.</p>
+
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <ul class="list-group list-group-flush bg-transparent">
+                    <li class="list-group-item bg-transparent text-white border-white">💉 Вакцинації та профілактика</li>
+                    <li class="list-group-item bg-transparent text-white border-white">🚑 Термінова допомога та хірургія</li>
+                    <li class="list-group-item bg-transparent text-white border-white">🔬 Діагностика та лабораторні дослідження</li>
+                    <li class="list-group-item bg-transparent text-white border-white">🦷 Стоматологія та чищення</li>
+                </ul>
+            </div>
+
+            <div class="col-md-4 d-flex align-items-center">
+                <div class="w-100">
+                    <a class="btn btn-lg w-100 mb-2 appointment-btn" asp-controller="Appointment" asp-action="Create">Записатись на прийом</a>
+                    <a class="btn btn-lg w-100 doctors-btn" asp-controller="Doctor" asp-action="Index">Наші лікарі</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="row mb-4">
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Контакти</h5>
+                <p class="card-text mb-1"><strong>Адреса:</strong> вул. Квіткова, 12, м. Київ</p>
+                <p class="card-text mb-1"><strong>Телефон:</strong> +380 (44) 123-45-67</p>
+                <p class="card-text"><strong>Email:</strong> info@vetclinic.example</p>
+                <a href="tel:+380441234567" class="btn btn-sm btn-outline-primary">Зателефонувати</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Графік роботи</h5>
+                <table class="table table-borderless mb-0">
+                    <tbody>
+                        <tr><td>Понеділок — П'ятниця</td><td class="text-end">09:00 — 19:00</td></tr>
+                        <tr><td>Субота</td><td class="text-end">10:00 — 16:00</td></tr>
+                        <tr><td>Неділя</td><td class="text-end">Вихідний</td></tr>
+                        <tr><td>Екстрені випадки</td><td class="text-end">24/7 (черговий лікар)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Вхід персоналу (Доктори)";
+}
+
+<div class="auth-card">
+    <h2>@ViewData["Title"]</h2>
+
+    <form asp-controller="Account" asp-action="LoginStaff" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="ReturnUrl" value="@(ViewData["ReturnUrl"] ?? "")" />
+
+        <div class="form-group">
+            <label for="Email">Email або логін</label>
+            <input type="text" class="form-control" id="Email" name="Email" placeholder="Введіть email або логін" required />
+        </div>
+
+        <div class="form-group">
+            <label for="Password">Пароль</label>
+            <input type="password" class="form-control" id="Password" name="Password" placeholder="********" required />
+        </div>
+
+        <div class="form-group" style="display: flex; align-items: center;">
+            <input type="checkbox" id="RememberMe" name="RememberMe" style="width: auto; margin-right: 10px;" />
+            <label for="RememberMe" style="display: inline; margin-bottom: 0; text-transform: none;">Запам'ятати мене</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Увійти</button>
+
+        <div class="auth-links">
+            <a asp-controller="Home" asp-action="Index">Назад на головну</a>
+        </div>
+    </form>
+</div>

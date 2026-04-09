@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Реєстрація пацієнта";
+}
+
+<div class="auth-card">
+    <h2>@ViewData["Title"]</h2>
+
+    <form asp-controller="Account" asp-action="Register" method="post">
+        @Html.AntiForgeryToken()
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="FirstName">Ім'я</label>
+                <input type="text" class="form-control" id="FirstName" name="FirstName" placeholder="Введіть ім'я" required />
+            </div>
+
+            <div class="form-group">
+                <label for="LastName">Прізвище</label>
+                <input type="text" class="form-control" id="LastName" name="LastName" placeholder="Введіть прізвище" required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="Email">Email</label>
+            <input type="email" class="form-control" id="Email" name="Email" placeholder="example@email.com" required />
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="Password">Пароль</label>
+                <input type="password" class="form-control" id="Password" name="Password" placeholder="********" required />
+            </div>
+
+            <div class="form-group">
+                <label for="ConfirmPassword">Підтвердження пароля</label>
+                <input type="password" class="form-control" id="ConfirmPassword" name="ConfirmPassword" placeholder="********" required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="PhoneNumber">Телефон</label>
+            <input type="tel" class="form-control" id="PhoneNumber" name="PhoneNumber" placeholder="+380 XX XXX XX XX" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Зареєструватися</button>
+
+        <div class="auth-links">
+            <a asp-controller="Account" asp-action="Login">Вже є акаунт? Увійти</a>
+            <span style="color: white; margin: 0 10px;">|</span>
+            <a asp-controller="Home" asp-action="Index">Назад</a>
+        </div>
+    </form>
+</div>
